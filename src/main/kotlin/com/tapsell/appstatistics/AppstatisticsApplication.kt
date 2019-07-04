@@ -6,8 +6,8 @@ import org.springframework.cache.annotation.EnableCaching
 
 @SpringBootApplication
 @EnableCaching
-class AppstatisticsApplication
+class AppStatisticsApplication
 
 fun main(args: Array<String>) {
-    runApplication<AppstatisticsApplication>(*args)
+    runApplication<AppStatisticsApplication>(*args)
 }

@@ -4,6 +4,7 @@ import com.tapsell.appstatistics.Model.AppStatisticsListResponse
 import com.tapsell.appstatistics.Model.AppStatisticsModel
 import com.tapsell.appstatistics.Repository.AppStatisticsRepo
 import com.tapsell.appstatistics.Utlis.toPersianWeek
+import com.tapsell.appstatistics.Utlis.toPersianYear
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.cache.annotation.Cacheable
 import org.springframework.stereotype.Service
@@ -19,7 +20,7 @@ class AppStatServiceImpl : AppStatService {
     @Autowired
     lateinit var appStatisticsRepo: AppStatisticsRepo
 
-    @Cacheable(value=["AppStatisticsWeeklyReport"], key = "#startDate-#endDate-#type")
+    @Cacheable(value=["app-statistics-report"])
     override fun getStats(startDate: Date, endDate: Date, type: Int): AppStatisticsListResponse {
         val appStatisticsList = appStatisticsRepo.findByTypeAndReportTimeBetween(type, startDate, endDate)
 
@@ -28,7 +29,7 @@ class AppStatServiceImpl : AppStatService {
                     if (first) {
                         AppStatisticsModel(
                                 key,
-                                element.reportTime.toPersianWeek(),
+                                element.reportTime.toPersianYear(),
                                 element.getTotalRequest(),
                                 element.getTotalClicks(),
                                 element.getTotalInstalls()

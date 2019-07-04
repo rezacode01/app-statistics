@@ -2,6 +2,7 @@ package com.tapsell.appstatistics
 
 import com.tapsell.appstatistics.Model.AppStatistics
 import com.tapsell.appstatistics.Repository.AppStatisticsRepo
+import com.tapsell.appstatistics.Service.AppStatService
 import com.tapsell.appstatistics.Utlis.toGregorian
 import org.bson.types.ObjectId
 import org.junit.Test
