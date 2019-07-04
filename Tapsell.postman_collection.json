@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "f4727254-0a63-41d3-842d-697ff28750bf",
+		"name": "Tapsell",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AppStatistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/app-statistics?startdate=1395-11-12&enddate=1399-12-22&type=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app-statistics"
+					],
+					"query": [
+						{
+							"key": "startdate",
+							"value": "1395-11-12"
+						},
+						{
+							"key": "enddate",
+							"value": "1399-12-22"
+						},
+						{
+							"key": "type",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
